@@ -1,0 +1,74 @@
+*{
+    background-color:#DDACF2;
+
+}
+
+header{
+    display: flex;
+    text-align: center;
+    color:#534359;
+    background-color:#DDACF2;
+    border-bottom:20px solid #DDACF2;
+    height: 130px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    font-family: Courier ;
+}
+div > div> img{
+    
+    display: flex;   
+    justify-content: space-between;
+    border: 5px solid #626262;
+    max-height: 360px;
+    max-width: 360x;
+    float:left;
+    object-fit:cover;
+    
+}
+#vineta{
+    background-color: #DDACF2;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top:0;
+    font-size: 21px;
+    line-height :5px;
+    
+}
+div{
+    background-color:#0D0D0D;
+    color: #A87FBE;  
+    font-family: Georgia, Times, 'Times New Roman', serif;
+}
+b{
+    background-color:#0D0D0D;
+    color: #A87FBE;
+}
+#titulo{
+    border-radius: 25px;
+    border: 5px solid #f2e6f2;
+    background-color:#f2e6f2;
+    font-weight: bold;
+    margin: 1px;
+    padding: 8px  ;
+}
+#agrega{
+    background-color:#f2e6f2;
+    color: #f2e6f2;
+}
+
+.btn-default {
+    background-color: #534359;
+    width: 250px;
+    margin-top: 20px;
+    margin-bottom: 25px;
+    font-weight: bold;
+    color:#F1C2F2;
+    font-size: medium;
+
+    
+}
+.btn-default:hover{
+    border-color:#DDACF2;
+}
+
