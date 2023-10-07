@@ -1,0 +1,52 @@
+Body{
+    background-color: #0D0D0D;
+}
+
+div{
+    color:#F1C2F2;  
+    text-align: justify;
+}
+
+h1{
+    text-align: center;
+}
+
+.btn{
+    color: white; 
+    background-color: #80658C;
+    border-color: #80658C; 
+}
+
+.btn-default:hover{ 
+    background-color: #DDACF2; 
+    border-color: #80658C; 
+    color: #0D0D0D; 
+}
+
+.btn-default:active{ 
+    background-color: #DDACF2; 
+    border-color: #80658C; 
+    color: #0D0D0D; 
+}
+
+.btn-danger{ 
+    background-color: #534359;
+    border-color: #534359; 
+}
+
+.btn-danger:hover{ 
+    background-color: #F1C2F2;
+    border-color: #534359; 
+    color: #0D0D0D;
+}
+
+img.img-responsive {
+    max-width: 100%;
+    text-align: center;
+}
+
+img.img-rounded {
+    max-width: 8%;
+    box-align: center;
+}
+
