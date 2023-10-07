@@ -11,7 +11,7 @@ h1{
     text-align: center;
 }
 
-.btn{
+.btn-default{
     color: white; 
     background-color: #80658C;
     border-color: #80658C; 
@@ -23,21 +23,21 @@ h1{
     color: #0D0D0D; 
 }
 
-.btn-default:active{ 
-    background-color: #DDACF2; 
-    border-color: #80658C; 
-    color: #0D0D0D; 
-}
-
-.btn-danger{ 
+#button2{ 
     background-color: #534359;
     border-color: #534359; 
 }
 
-.btn-danger:hover{ 
+#button2:hover{ 
     background-color: #F1C2F2;
     border-color: #534359; 
     color: #0D0D0D;
+}
+
+#button2:active{ 
+    background-color: #0D0D0D;
+    border-color: #534359; 
+    color: white;
 }
 
 img.img-responsive {
@@ -46,7 +46,7 @@ img.img-responsive {
 }
 
 img.img-rounded {
-    max-width: 8%;
+    max-width: 15%;
     box-align: center;
 }
 

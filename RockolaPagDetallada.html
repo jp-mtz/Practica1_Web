@@ -5,14 +5,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
-        <link type="text/css" rel="stylesheet" href="stylePagDetallada.css" />
+        <link type="text/css" rel="stylesheet" href="style.css" />
         <title>Página detallada de la práctica 1</title>
     </head>
 
     <body>
         <div class="container"> 
             <br>
-            <h1>Melodrama</h1>
+            <h1>Melodrama</h1><hr>
             <br>
             <div class="row">
                 <div class="col-md-4">
@@ -40,18 +40,19 @@
             <p></p>
             <div class= "d-flex justify-content-center gap-2"> 
                 <button type="button" class="btn btn-default">Borrar</button>
-                <button type="button" class="btn btn-primary">Editar</button>
-                <button type="button" class="btn btn-danger">Ver todos los elementos</button>
+                <button type="button" class="btn btn-default">Editar</button>
+                <button id="button2" type="button" class="btn btn-danger">Ver todos los elementos</button>
             </div>
             <br> <br>
             <div class="row"> 
                 <div class="col-md-6"> 
                     <p> <strong> <em>Escúchalo y deja tu reseña</em></strong></p>
                 </div>
-                <div class="col-md-6"> 
-                    <a href="https://www.youtube.com/playlist?list=PLvm6B0LWgqu9pWrYmmC-6ETs7yDcfHyl9" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" class="img-responsive img-rounded"> </a>
+                <div class="col-md-3"> 
                     <a href="https://open.spotify.com/album/2B87zXm9bOWvAJdkJBTpzF" target="_blank"><img src="https://seeklogo.com/images/S/spotify-2015-logo-560E071CB7-seeklogo.com.png" class="img-responsive img-rounded"> </a>
-                    
+                </div>
+                <div class="col-md-3"> 
+                    <a href="https://www.youtube.com/playlist?list=PLvm6B0LWgqu9pWrYmmC-6ETs7yDcfHyl9" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" class="img-responsive img-rounded"> </a>
                 </div>
             </div>
             <br>
@@ -63,24 +64,61 @@
                     </div>
                     <div class="form-group">
                         <label for="contraseña">Contraseña:</label>
-                        <input type="password" class="form-control" id="password" placeholder="Ingresa tu contraseña" disabled>
+                        <input type="password" class="form-control" id="password" placeholder="Ingresa tu contraseña">
                     </div>
                     <div class="form-group">
                         <label for="calificacion">Calificación:</label>
-                        <input type="number" class="form-control" id="score" placeholder="Ingresa la calificación" disabled>
+                        <input type="number" class="form-control" id="score" placeholder="Ingresa la calificación">
                     </div>
                     <div class="form-group">
                         <label for="comentario">Comentario:</label>
-                        <input type="text" class="form-control" id="comentario" placeholder="Agrega un comentario" disabled>
+                        <input type="text" class="form-control" id="comentario" placeholder="Agrega un comentario">
                     </div>
                     <br>
                     <div class="checkbox">
                         <label><input type="checkbox"> Remember me</label>
                     </div>
                     <br>
-                    <button type="submit" class="btn btn-primary">Guardar</button>
+                    <button type="submit" class="btn btn-default">Guardar</button>
                 </form>
                 <br><br><br>
+            </div>
+            <div class="col-md-10"> 
+                <form role="form">
+                    <div class="form-row">
+                        <div class="form-group col-md-5">
+                            <label for="usuario">Usuario:</label>
+                            <input type="email" class="form-control" id="usuario" placeholder="Ingresa tu usuario">
+                        </div>
+                        <div class="form-group col-md-5 mb-3">
+                            <label for="calificacion">Calificación:</label>
+                            <select class="custom-select" id="Score">
+                                <option selected>Mi puntuación</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row"> 
+                        <div class="form-group col-md-10 mb-3"> 
+                            <label for="comentario">Comentario:</label>
+                            <input type="text" class="form-control" id="comentario" placeholder="Agrega un comentario">
+                        </div>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox"> Remember me</label>
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-default">Guardar</button>
+                </form>
             </div>
         </div>
     </body>
