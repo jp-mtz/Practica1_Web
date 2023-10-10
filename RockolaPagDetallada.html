@@ -27,7 +27,7 @@
                         <li>Electropop</li>
                         <li>Art pop</li>
                     </ul>
-                    <p>Calificaciones por usuarios: <strong> 91 </strong></p>
+                    <p>Calificaciones por usuarios: <strong> 9 </strong></p>
                     <p><strong> ¿De qué trata Melodrama? </strong></p>
                     <p> Por medio de 11 canciones, Lorde nos lleva a través del viaje emocional que vive en una misma noche en una fiesta, 
                         en la cual reflexionará principalmente sobre el tema de la soledad en relación a su reciente ruptura con su primer 
@@ -56,44 +56,18 @@
                 </div>
             </div>
             <br>
-            <div class="col-md-8">
-                <form role="form">
-                    <div class="form-group">
-                        <label for="usuario">Usuario:</label>
-                        <input type="email" class="form-control" id="usuario" placeholder="Ingresa tu usuario">
-                    </div>
-                    <div class="form-group">
-                        <label for="contraseña">Contraseña:</label>
-                        <input type="password" class="form-control" id="password" placeholder="Ingresa tu contraseña">
-                    </div>
-                    <div class="form-group">
-                        <label for="calificacion">Calificación:</label>
-                        <input type="number" class="form-control" id="score" placeholder="Ingresa la calificación">
-                    </div>
-                    <div class="form-group">
-                        <label for="comentario">Comentario:</label>
-                        <input type="text" class="form-control" id="comentario" placeholder="Agrega un comentario">
-                    </div>
-                    <br>
-                    <div class="checkbox">
-                        <label><input type="checkbox"> Remember me</label>
-                    </div>
-                    <br>
-                    <button type="submit" class="btn btn-default">Guardar</button>
-                </form>
-                <br><br><br>
-            </div>
-            <div class="col-md-10"> 
-                <form role="form">
-                    <div class="form-row">
-                        <div class="form-group col-md-5">
+            <div> 
+                <form> 
+                    <div class="row"> 
+                        <div class="form-group col-md-5 mb-3">
                             <label for="usuario">Usuario:</label>
                             <input type="email" class="form-control" id="usuario" placeholder="Ingresa tu usuario">
                         </div>
-                        <div class="form-group col-md-5 mb-3">
+                        <div class="form-group col-md-3 mb-3">
                             <label for="calificacion">Calificación:</label>
-                            <select class="custom-select" id="Score">
+                            <select id="Score" class="form-control">
                                 <option selected>Mi puntuación</option>
+                                <option value="1">0</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -107,17 +81,22 @@
                             </select>
                         </div>
                     </div>
-                    <div class="form-row"> 
-                        <div class="form-group col-md-10 mb-3"> 
+                    <div class="row"> 
+                        <div class="form-group col-md-8 mb-3"> 
                             <label for="comentario">Comentario:</label>
-                            <input type="text" class="form-control" id="comentario" placeholder="Agrega un comentario">
+                            <textarea class="form-control" id="comentario" name= "comentario" placeholder="Agrega un comentario" rows="6" ></textarea>
                         </div>
                     </div>
-                    <div class="checkbox">
-                        <label><input type="checkbox"> Remember me</label>
-                    </div>
-                    <br>
                     <button type="submit" class="btn btn-default">Guardar</button>
+                </form>
+            </div>
+            <br> 
+            <div> 
+                <p><h4>Recent reviews:</h4> </p>
+                <form class="col-md-8">
+                    <a> 
+                        No reviews yet
+                    </a>               
                 </form>
             </div>
         </div>
