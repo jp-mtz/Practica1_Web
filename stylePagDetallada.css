@@ -54,6 +54,21 @@ h4{
     font-size:large;
 }
 
-a{ 
+input{
+    width: 70%;
+
+}
+#comms{
+    display: block;
+    color:#f2e6f2;
+    background-color:#534359;
+    border-radius: 15px;
+    border: 5px solid #f2e6f2;
+    margin: 2px;
     
+    padding: 2px  ;
+}
+
+.merged-cell {
+    grid-row: span 2; /* Fusiona dos filas */
 }
