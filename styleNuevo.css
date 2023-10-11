@@ -1,0 +1,39 @@
+Body{
+    background-color: #0D0D0D;
+}
+
+div{
+    color:#F1C2F2;  
+    
+}
+
+header{
+    text-align: center;
+    color: #F1C2F2; 
+    font-size: 1rem;
+}
+
+.btn-default{
+    color: white; 
+    background-color: #80658C;
+    border-color: #80658C; 
+}
+
+.btn-default:hover{ 
+    background-color: #DDACF2; 
+    border-color: #80658C; 
+    color: #0D0D0D; 
+}
+.container{
+    display: flex;
+    justify-content: center;
+}
+.border{
+    background-color: #534359;
+    
+    width: 50%;
+}
+label {
+    display: block;
+    text-align: center;
+}
