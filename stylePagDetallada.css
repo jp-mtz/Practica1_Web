@@ -53,4 +53,13 @@ img.img-rounded {
 h4{
     font-size:large;
 }
+#comms{
+    display: block;
+    color:#f2e6f2;
+    background-color:#534359;
+    border-radius: 10px;
+    border: 2px solid #f2e6f2;
+    margin: 2%;
 
+    padding: 2%  ;
+}

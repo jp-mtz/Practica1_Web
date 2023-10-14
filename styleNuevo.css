@@ -24,6 +24,11 @@ header{
     border-color: #80658C; 
     color: #0D0D0D; 
 }
+.btn-default:active{ 
+    background-color: #0D0D0D;
+    border-color: #534359; 
+    color: white;
+}  
 .container{
     display: flex;
     justify-content: center;
