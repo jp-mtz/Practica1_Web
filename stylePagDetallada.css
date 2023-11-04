@@ -63,3 +63,22 @@ h4{
 
     padding: 2%  ;
 }
+
+#banner_main{
+    display: flex;
+    color:#534359;
+    background-color:#DDACF2;
+    align-items: right;
+    justify-content: right;
+    font-family: Courier ;
+    padding: .5%;
+}
+#titulo_main{
+    border-radius: 10px;
+    border: 5% solid #f2e6f2;
+    background-color:#f2e6f2;
+    font-weight: bold;
+    font-size: 115%;
+    padding-left: 1%;
+    padding-right: 1%;
+    }
