@@ -33,20 +33,18 @@
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">Album</span>
                         <input type="text" class="form-control" placeholder="Name" aria-label="Nombre" aria-describedby="basic-addon1">
-                      </div>
+                    </div>
                     
-                      <div class="input-group mb-3">
+                    <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">Cover</span>
                         <input type="url" class="form-control" placeholder="Album's cover URL" aria-label="url" aria-describedby="basic-addon1">
-                      </div>
+                    </div>
                     
-                      <div class="input-group mb-3">
+                    <div class="input-group mb-3">
                         <span class="input-group-text">Genre(s)</span>
                         <input type="text" aria-label="First name" class="form-control">
-                        <input type="text" aria-label="Last name" class="form-control">
-                        <input type="text" aria-label="Last name" class="form-control">
-                      </div>
-                      <div class="input-group">
+                    </div>
+                    <div class="input-group mb-3">
                         <span class="input-group-text">Score</span>
                         <select id="Score" class="form-control"> 
                             <option selected="Add a Score"> </option>
@@ -62,15 +60,15 @@
                             <option value="9"> 9 </option>
                             <option value="10"> 10 </option>
                         </select>
-                        </div>
                     </div>
-                    <label>  
-                        <input type="radio" name="options-radios" id="optionsRadios1" value="option1" checked> Add description
-                    </label> 
-                    <label>   
-                        <input type="radio" name="options-radios" id="optionsRadios2" value="option2"> Maybe later 
-                    </label>
-                    <br><br>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" >Review</span>
+                        </div>
+                        <textarea class="form-control" rows="1"></textarea>
+                    </div>
+                </div>                   
+                <br><br>
                 </form>
                 <div class= "d-flex justify-content-center gap-2">
                 <button type="submit" class="btn btn-default">Save</button>
