@@ -56,11 +56,13 @@ h4{
 
 #comms{
     display: block;
-    color:#F1C2F2;
+    color:#f2e6f2;
+    background-color:#534359;
     border-radius: 10px;
-    border: 1px solid #f2e6f2;
+    border: 2px solid #f2e6f2;
     margin: 2%;
-    padding: 2%;
+
+    padding: 2%  ;
 }
 
 #banner_main{
@@ -82,22 +84,3 @@ h4{
     padding-left: 1%;
     padding-right: 1%;
 }
-
-#score_form{
-    border-radius: 20px; 
-    border: 1px solid white; 
-    background-color: rgb(117, 69, 138);
-    color:white; 
-    font-weight: bold;
-    display: inline-flex; 
-    align-items: center;
-    justify-content: center;
-    margin: 1%;
-    padding: 1%; 
-    margin: auto;
-}
-#user_form{
-    font-weight: bold;
-
-}
-
