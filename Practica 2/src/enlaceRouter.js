@@ -11,14 +11,14 @@ router.get('/', (req, res) => {
 });
 
 router.post('/post/new', (req,res) => {
-    let{ user, title, text} = req.body;
-    enlaceServicio.addPost({ user, title, text});
+    let{ artist, year, album, cover, genre, score, review} = req.body;
+    enlaceServicio.addPost({artist, year, album, cover, genre, score, review});
     res.render('saved_post');
 });
 
 router.get('/post/:id', (req, res) => {
     let post = enlaceServicio.getPost(req.params.id); 
-    res.render('show_post', { post });
+    res.render('RockolaPagDetallada', { post });
 });
 router.get('/post/:id/delete', (req, res) =>{
     enlaceServicio.deletePost(req.params.id);
