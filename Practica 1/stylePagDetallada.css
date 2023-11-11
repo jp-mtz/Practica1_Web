@@ -84,17 +84,29 @@ h4{
 
 #score_form{
     border-radius: 20px; 
-    border: 1px solid white; 
-    background-color:#534359;
+    border: 1px solid #DDACF2; 
     color:white; 
     font-weight: bold;
-    display: inline-flex; 
+    display: inline-block; 
     align-items: center;
     justify-content: center;
-    margin: 1%;
+    margin: 2%;
     padding: 1%; 
     margin: auto;
+    vertical-align: middle;
+    line-height: 1.5;
 }
 #user_form{
+    
     font-weight: bold;
+}
+.pie-chart{
+    width: 20px;
+    height: 20px;
+    background:conic-gradient(
+        #DDACF2 70%,
+        #0D0D0D 30%
+    );
+    border-radius: 100%;
+    border-right: 100px;
 }
