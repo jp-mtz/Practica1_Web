@@ -14,7 +14,9 @@
         <div class="row">
             {{#posts}} 
             <div class="col-md-3">
-                <a href="post/{{id}}">{{cover}}</a>
+                <a href="post/{{id}}">
+                    <img src="{{cover}}" class="img-responsive" >
+                </a>
                 <div><span id="vineta">&#160;</span> <b>{{album}}</b> {{year}}<br><span id="vineta">&#160;</span> {{artist}}</div>
                 <br> 
             </div>
