@@ -65,6 +65,11 @@ addPost({
         post.id = id.toString();
         posts.set(post.id, post);
     }
+    export function editPost(post) {
+        let id = post.get(id)
+        post.id = id.toString();
+        posts.set(post.id, post);
+    }
     
     export function deletePost(id){
         posts.delete(id);

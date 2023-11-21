@@ -26,6 +26,13 @@ router.get('/post/:id/edit', (req, res) => {
     res.render('pagEditRockola', { post });
 });
 
+router.post('/post/edit/edits', (req, res) => {
+    let{ artist, year, album, cover, genre, score, review} = req.body;
+    enlaceServicio.editPost({artist, year, album, cover, genre, score, review});
+    res.render('saved_post');
+});
+
+
 router.get('/post/:id/delete', (req, res) =>{
     enlaceServicio.deletePost(req.params.id);
     res.render('deleted_post'); });
