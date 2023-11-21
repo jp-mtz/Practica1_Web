@@ -20,6 +20,12 @@ router.get('/post/:id', (req, res) => {
     let post = enlaceServicio.getPost(req.params.id); 
     res.render('RockolaPagDetallada', { post });
 });
+
+router.get('/post/:id/edit', (req, res) => {
+    let post = enlaceServicio.getPost(req.params.id); 
+    res.render('pagEditRockola', { post });
+});
+
 router.get('/post/:id/delete', (req, res) =>{
     enlaceServicio.deletePost(req.params.id);
     res.render('deleted_post'); });
