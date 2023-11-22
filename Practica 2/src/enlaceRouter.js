@@ -4,7 +4,6 @@ import * as enlaceServicio from './enlaceServicio.js';
 const router = express.Router();
 
 router.get('/', (req, res) => {
-
     res.render('RockolaMainPage', {
         posts: enlaceServicio.getPosts()
     });
@@ -26,9 +25,10 @@ router.get('/post/:id/edit', (req, res) => {
     res.render('pagEditRockola', { post });
 });
 
-router.post('/post/edit/edits', (req, res) => {
+router.post('/post/:id/edit/edits', (req, res) => {
     let{ artist, year, album, cover, genre, score, review} = req.body;
-    enlaceServicio.editPost({artist, year, album, cover, genre, score, review});
+    let id = req.params.id;
+    enlaceServicio.editPost({artist, year, album, cover, genre, score, review}, id);
     res.render('saved_post');
 });
 
