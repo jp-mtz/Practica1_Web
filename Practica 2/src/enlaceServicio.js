@@ -4,7 +4,7 @@ addPost({
     artist: "Lorde", year: "2017", album: "Melodrama", cover: "https://i.scdn.co/image/ab67616d0000b27334b24bc065105d1fa5df4fa6",
     genre: "Electropop", score: "9", 
     review: "Lorde captures emotions like none other. Her second album is a masterful study of being a young woman, a sleek and humid pop record full of grief and hedonism, crafted with the utmost care and wisdom.",
-    comment: {content: "Comment: "}});
+    comment: {content: "nice ", score1: "9", user:"user2023"}});
 
 addPost({
     artist: "Dua Lipa", year: "2020", album: "Future Nostalgia", cover: "https://i.scdn.co/image/ab67616d0000b2731f7c48d7efee22e04ce91917",
@@ -110,7 +110,7 @@ addPost({
             post.review = postData.review;
         }
         if (postData.comment !== undefined) {
-          post.comment = postData.comment;
+            post.comment = postData.comment;
         }
         posts.set(postId, post);
         return true;
