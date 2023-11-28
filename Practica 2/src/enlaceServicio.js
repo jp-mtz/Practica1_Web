@@ -11,6 +11,7 @@ addPost({
     genre: "Dance pop", score: "8",
     review: "Future Nostalgia is a breathtakingly fun, cohesive and ambitious attempt to find a place for disco in 2020."})
 
+    
 addPost({
     artist: "Peso Pluma", year: "2023", album: "Genesis", cover: "https://i.scdn.co/image/ab67616d0000b2732fb583ed96f8f35cbf2897ba",
     genre: "Corridos tumbados", score: "7",
