@@ -38,7 +38,7 @@ router.post('/post/new', (req,res) => {
         res.render('error_post', {error});
     }
     else {
-        enlaceServicio.addPost({artist, year, album, cover, genre, score, review});
+        enlaceServicio.addPost({artist, year, album, cover, genre, score, review, comment});
         res.render('saved_post');
     }
 
