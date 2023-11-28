@@ -11,8 +11,37 @@ router.get('/', (req, res) => {
 
 router.post('/post/new', (req,res) => {
     let{ artist, year, album, cover, genre, score, review, comment} = req.body;
-    enlaceServicio.addPost({artist, year, album, cover, genre, score, review});
-    res.render('saved_post');
+    let error = "";
+    if(artist === ""){
+        error = error + "Artist, ";
+    }
+    if(year === ""){
+        error = error + "Year, ";
+    }
+    if(album === ""){
+        error = error + "Album, ";
+    }
+    if(cover === ""){
+        error = error + "Cover, ";
+    }
+    if(genre === ""){
+        error = error + "Genre, ";
+    }
+    if(score === ""){
+        error = error + "Score, ";
+    }
+    if(review === ""){
+        error = error + "Review ";
+    }
+
+    if (error.length > 0){
+        res.render('error_post', {error});
+    }
+    else {
+        enlaceServicio.addPost({artist, year, album, cover, genre, score, review});
+        res.render('saved_post');
+    }
+
 });
 
 router.get('/post/:id', (req, res) => {
@@ -39,6 +68,7 @@ router.post('/post/:id/update', (req, res) => {
     enlaceServicio.updatePost(postId, {artist, year, album, cover, genre, score, review, comment: { content: comment.content, user: comment.user, score1: comment.score1 } });
     res.redirect('/');
 });
+
 
 router.get('/post/:id/delete', (req, res) =>{
     enlaceServicio.deletePost(req.params.id);
