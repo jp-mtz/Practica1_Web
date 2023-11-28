@@ -64,7 +64,6 @@ router.post('/post/:id/edit/edits', (req, res) => {
 router.post('/post/:id/update', (req, res) => {
     let {artist, year, album, cover, genre, score, review, comment} = req.body;
     let postId = req.params.id; 
-    comment = comment || {};
     enlaceServicio.updatePost(postId, {artist, year, album, cover, genre, score, review, comment: { content: comment.content, user: comment.user, score1: comment.score1 } });
     res.redirect('/');
 });
