@@ -58,16 +58,16 @@
             </div>
             <br>
             <div> 
-                <form> 
+                <form action = "/post/{{post.id}}/update" method = "post"> 
                     <div class="row"> 
                         <div class="form-group col-md-2 mb-3">&nbsp;</div>
                         <div class="form-group col-md-6 mb-3">
-                            <label for="usuario">User:</label>
-                            <input type="email" class="form-control" id="usuario" placeholder="Write down your username...">
+                            <label for="usuario" >User:</label>
+                            <input name = "comment[user]" type="text" class="form-control" id="usuario" placeholder="Write down your username...">
                         </div>
                         <div class="form-group col-md-2 mb-3">
                             <label for="calificacion">Score:</label>
-                            <select id="Score" class="form-control">
+                            <select id="Score" class="form-control" name="comment[score1]">
                                 <option selected>My score...</option>
                                 <option value="1">0</option>
                                 <option value="1">1</option>
@@ -89,7 +89,7 @@
                         <div class="form-group col-md-2 mb-3"> </div> 
                         <div class="form-group col-md-8 mb-3"> 
                             <label for="comentario">Coments:</label>
-                            <textarea class="form-control" id="comentario" name= "comentario" placeholder="Add a coment to this album..." rows="5" ></textarea> <br>
+                            <textarea name="comment[content]" class="form-control" id="comentario" name= "comentario" placeholder="Add a coment to this album..." rows="5" ></textarea> <br>
                         </div>
                     </div>
                     <div class="row">  
@@ -98,13 +98,13 @@
                                 <container  id="comms">
                                     <h4>Recent reviews:</h4> 
                                         <a id="score_form"> 
-                                            <div class="pie-chart"></div>
+                                            {{post.comment.score1}}
                                         </a>
                                         <a id="user_form"> 
-                                            user1:
+                                            {{post.comment.user}}
                                         </a>
                                         <a id="comment_form">
-                                            i liked it
+                                            {{post.comment.content}}
                                         </a>
                                         <br>   
                                 </container>
