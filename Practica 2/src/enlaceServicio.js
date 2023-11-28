@@ -81,3 +81,8 @@ addPost({
     export function getPost(id){
         return posts.get(id);
     }
+
+    export function validate(a){
+        a = a.toString();
+        return a === "";
+    }
