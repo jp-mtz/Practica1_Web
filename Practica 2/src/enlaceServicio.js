@@ -112,9 +112,18 @@ addPost({
         }
         if (postData.comment !== undefined) {
           post.comment = post.comment || {} || [];
-          post.comment.content.push(postData.comment.content); 
-          post.comment.score1.push(postData.comment.score1); 
-          post.comment.user.push(postData.comment.user); 
+          if (postData.comment.content != undefined){
+            post.comment.content = post.comment.content || [];
+            post.comment.content.push(postData.comment.content); 
+          }
+          if (postData.comment.user != undefined){
+            post.comment.user = post.comment.user || [];
+            post.comment.user.push(postData.comment.user); 
+          }
+          if (postData.comment.score1 != undefined){
+            post.comment.score1 = post.comment.score1 || [];
+            post.comment.score1.push(postData.comment.score1); 
+          } 
         }
         posts.set(postId, post);
         return true;
