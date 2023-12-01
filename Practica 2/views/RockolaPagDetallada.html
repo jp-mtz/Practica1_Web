@@ -97,16 +97,28 @@
                         <div class="form-group col-md-8 mb-3">
                                 <container  id="comms">
                                     <h4>Recent reviews:</h4> 
+                                    {{#post.comment}}
+                                        {{#score1}}
                                         <a id="score_form"> 
-                                            {{post.comment.score1}}
+                                            {{.}}
                                         </a>
+                                        {{/score1}}
+                                        {{#user}}
                                         <a id="user_form"> 
-                                            {{post.comment.user}}
+                                            {{.}}
                                         </a>
+                                        {{/user}}
+                                        {{#content}}
                                         <a id="comment_form">
-                                            {{post.comment.content}}
+                                            {{.}}
                                         </a>
-                                        <br>  
+                                        {{/content}}
+                                        <br>
+                                    {{/post.comment}}
+                                    {{^post.comment}} 
+                                        <div> There are no reviews yet. </div>
+                                    {{/post.comment}} 
+                                          
                                 </container>
                             </div>
                         </div>

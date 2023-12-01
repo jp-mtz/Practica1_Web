@@ -4,7 +4,7 @@ addPost({
     artist: "Lorde", year: "2017", album: "Melodrama", cover: "https://i.scdn.co/image/ab67616d0000b27334b24bc065105d1fa5df4fa6",
     genre: "Electropop", score: "9", 
     review: "Lorde captures emotions like none other. Her second album is a masterful study of being a young woman, a sleek and humid pop record full of grief and hedonism, crafted with the utmost care and wisdom.",
-    comment: {content: ["nice"], score1: ["9"], user:["User2023"]}});
+    });
 
 addPost({
     artist: "Dua Lipa", year: "2020", album: "Future Nostalgia", cover: "https://i.scdn.co/image/ab67616d0000b2731f7c48d7efee22e04ce91917",
@@ -85,45 +85,11 @@ addPost({
     }
 
     export function updatePost(postId, postData) {
-        let post = posts.get(postId);
-        if (!post) {
-          return false;
-        }
-        if (postData.artist !== undefined) {
-          post.artist = postData.artist;
-        }
-        if (postData.year !== undefined) {
-          post.year = postData.year;
-        }
-        if (postData.album !== undefined) {
-          post.album = postData.album;
-        }
-        if (postData.cover !== undefined) {
-            post.cover = postData.cover;
-        }
-        if (postData.genre !== undefined) {
-            post.genre = postData.genre;
-        }
-        if (postData.score !== undefined) {
-            post.score = postData.score;
-        }
-        if (postData.review !== undefined) {
-            post.review = postData.review;
-        }
-        if (postData.comment !== undefined) {
-          post.comment = post.comment || {} || [];
-          if (postData.comment.content != undefined){
-            post.comment.content = post.comment.content || [];
-            post.comment.content.push(postData.comment.content); 
-          }
-          if (postData.comment.user != undefined){
-            post.comment.user = post.comment.user || [];
-            post.comment.user.push(postData.comment.user); 
-          }
-          if (postData.comment.score1 != undefined){
-            post.comment.score1 = post.comment.score1 || [];
-            post.comment.score1.push(postData.comment.score1); 
-          } 
+        let post = posts.get(postId) || {};
+        post = {...post, ...postData.post}; 
+        if (postData.comment !== undefined){
+            post.comment = post.comment || []; 
+            post.comment.push(postData.comment);
         }
         posts.set(postId, post);
         return true;
