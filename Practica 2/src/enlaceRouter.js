@@ -66,7 +66,7 @@ router.post('/post/:id/update', (req, res) => {
     const postId = req.params.id; 
     const commentArray = comment ? [comment]: []; 
     enlaceServicio.updatePost(postId, {artist, year, album, cover, genre, score, review, comment: commentArray[0], });
-    res.redirect('/');
+    res.redirect(`/post/${postId}`);
 });
 
 

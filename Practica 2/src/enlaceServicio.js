@@ -4,6 +4,7 @@ addPost({
     artist: "Lorde", year: "2017", album: "Melodrama", cover: "https://i.scdn.co/image/ab67616d0000b27334b24bc065105d1fa5df4fa6",
     genre: "Electropop", score: "9", 
     review: "Lorde captures emotions like none other. Her second album is a masterful study of being a young woman, a sleek and humid pop record full of grief and hedonism, crafted with the utmost care and wisdom.",
+    comment: [{ score1: "9", user: "user1", content: "not bad" }]
     });
 
 addPost({
@@ -86,9 +87,10 @@ addPost({
 
     export function updatePost(postId, postData) {
         let post = posts.get(postId) || {};
-        post = {...post, ...postData.post}; 
+        post = {...post, ...postData.post};
+        post.comment = post.comment || [];  
+
         if (postData.comment !== undefined){
-            post.comment = post.comment || []; 
             post.comment.push(postData.comment);
         }
         posts.set(postId, post);
