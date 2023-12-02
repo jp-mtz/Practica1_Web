@@ -9,7 +9,8 @@ addPost({
 addPost({
     artist: "Dua Lipa", year: "2020", album: "Future Nostalgia", cover: "https://i.scdn.co/image/ab67616d0000b2731f7c48d7efee22e04ce91917",
     genre: "Dance pop", score: "8",
-    review: "Future Nostalgia is a breathtakingly fun, cohesive and ambitious attempt to find a place for disco in 2020."})
+    review: "Future Nostalgia is a breathtakingly fun, cohesive and ambitious attempt to find a place for disco in 2020.",
+    comment: {content: ["a very good album"], score1: ["9"], user:["Star123"]}})
 
     
 addPost({
