@@ -1,5 +1,5 @@
 const posts = new Map();
-let id = 0;
+let nextId = 0;
 
 export function loadSampleData() {
 addPost({ 
@@ -68,9 +68,9 @@ addPost({
 }
 
     export function addPost(post) {
-        posts.set(id, post);
-        post.id = id;
-        id++;
+        let id = nextId++; 
+        post.id = id.toString();
+        posts.set(post.id, post);
     }
     export function editPost(post, id) {
         post.id = id.toString();
