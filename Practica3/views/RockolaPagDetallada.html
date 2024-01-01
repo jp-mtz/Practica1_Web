@@ -9,7 +9,6 @@
         </a>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
         <link type="text/css" rel="stylesheet" href="../stylePagDetalle.css" />
         <title>Detail page 1</title>
     </head>
@@ -21,7 +20,7 @@
             <br>
             <div class="row">
                 <div class="col-md-4">
-                    <img class="img-responsive" src="{{post.cover}}" />
+                    <img  id= "poster" class="img-responsive" src="{{post.cover}}" />
                 </div>
                 <div class="col-md-8">
                     <p> <h3>{{post.artist}}</h3> </p>
@@ -66,7 +65,7 @@
                             <input name = "comment[user]" type="text" class="form-control" id="usuario" placeholder="Write down your username...">
                         </div>
                         <div class="form-group col-md-2 mb-3">
-                            <label for="calificacion">Score:</label>
+                            <label for="Score">Score:</label>
                             <select id="Score" class="form-control" name="comment[score1]">
                                 <option selected>My score...</option>
                                 <option value="1">0</option>
@@ -124,6 +123,34 @@
                 </form>
             </div>
         </div>
+        <script >
+let el = document.getElementById('poster');
+const height = el.clientHeight;
+const width = el.clientWidth;
+
+el.addEventListener('mouseover', handleMove)
+function handleMove(e){
+    const xVal = e.layerX; 
+    const yVal = e.layerY;
+    const yRotation = 20 * ((xVal-width/2)/width)
+    const xRotation = 20 * ((yVal - height/2)/height)
+    const string = 'perspective(500px) scale(1.1) rotateX(' + xRotation + 'deg) rotateY(' + yRotation + 'deg)'
+    el.style.transform = string 
+}
+el.addEventListener('mouseout', function() {
+  el.style.transform = 'perspective(500px) scale(1) rotateX(0) rotateY(0)'
+})
+
+/* Add listener for mousedown event, to simulate click */
+el.addEventListener('mousedown', function() {
+  el.style.transform = 'perspective(500px) scale(0.9) rotateX(0) rotateY(0)'
+})
+
+/* Add listener for mouseup, simulate release of mouse click */
+el.addEventListener('mouseup', function() {
+  el.style.transform = 'perspective(500px) scale(1.1) rotateX(0) rotateY(0)'
+})
+        </script>
     </body>
 </html>
 
