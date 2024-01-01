@@ -6,10 +6,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"><link/>
-        <script src="app.js"></script>
+        
         <link type="text/css" rel="stylesheet" href="styleMain.css" />
     </head>
     <body>
+        <div> <hr> </div>
+        <div>
+            <input id="search" oninput="filterAlbums()" type="text" name="search" placeholder="Search an album...">
+        </div>
         <div> <hr> </div>
         <div class="row" id='posts'>
             {{#posts}} 
@@ -17,7 +21,7 @@
                 <a href="post/{{id}}">
                     <img src="{{cover}}" class="img-responsive" >
                 </a>
-                <div><span id="vineta">&#160;</span> <b>{{album}}</b> ({{year}})<br><span id="vineta">&#160;</span> {{artist}}</div>
+                <div ><span id="vineta">&#160;</span> <b class="album">{{album}}</b> ({{year}})<br><span id="vineta">&#160;</span> {{artist}}</div>
                 <br> 
             </div>
             {{/posts}}
@@ -35,5 +39,6 @@
                 
             </a>
             </div>
+            <script src="app.js"></script>
     </body>
     </html>
