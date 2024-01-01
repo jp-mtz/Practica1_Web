@@ -12,12 +12,12 @@
     <body>
         <div> <hr> </div>
         <div>
-            <input id="search" oninput="filterAlbums()" type="text" name="search" placeholder="Search an album...">
+            <input id="search" oninput="search_title()" type="text" name="search" placeholder="Search an album...">
         </div>
         <div> <hr> </div>
-        <div class="row" id='posts'>
+        <div class="grid-container" id='posts'>
             {{#posts}} 
-            <div class="col-md-3">
+            <div class="item{{id}}">
                 <a href="post/{{id}}">
                     <img src="{{cover}}" class="img-responsive" >
                 </a>
@@ -31,14 +31,19 @@
             {{/posts}} 
 
         </div>
-            <hr>
-            <div class= "d-flex justify-content-center gap-2"> <button class="btn btn-default"  onclick='loadMore()'>Load more</button> </div>
+            
             <br>
-            <a href="pagNuevoRockola.html">
-            <div class= "d-flex justify-content-center gap-2"> <button class="btn btn-default" type="submit">Add an album to La Rockola!</button>
+            <hr>
+        <div class="container">
+            <div class= "row">
+                    <div class="col-sm"> <button class="btn btn-default"  onclick='loadMore()'>Load more</button> </div>
+                <a href="pagNuevoRockola.html">
+                <div class="col-sm"> <button class="btn btn-default" type="submit">Add an album to La Rockola!</button> </div>
+                </a>
                 
-            </a>
+                <div class="col-sm"><button  class="btn btn-default" onclick="toggleLayout()">Toggle layout</button></div>
             </div>
+        </div>
             <script src="app.js"></script>
     </body>
     </html>
