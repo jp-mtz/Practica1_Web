@@ -42,12 +42,13 @@ function search_title() {
         let albumName = albums[i].innerText.toLowerCase();
         let parentDiv = albums[i].parentElement.parentElement; // Obtener el elemento contenedor del álbum
 
-        if (!albumName.includes(input)) {
-            // Si el nombre del álbum no coincide, oculta todo el contenedor
-            parentDiv.style.display = "none";
+        if (albumName.includes(input)) {
+            // Si el nombre del álbum coincide, muestra el contenedor a color
+            parentDiv.style.filter = "none"; // Remove black and white effect
+            parentDiv.style.filter = "blur(0px)";
         } else {
-            // Si el nombre del álbum coincide, muestra el contenedor
-            parentDiv.style.display = "list-item";
+            // Si el nombre del álbum no coincide, oculta todo el contenedor y aplica blanco y negro
+            parentDiv.style.filter = "grayscale(100%) blur(2px)"; // Apply black and white effect
         }
     }
 }
