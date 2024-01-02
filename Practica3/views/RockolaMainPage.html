@@ -11,13 +11,15 @@
     </head>
     <body>
         <div> <hr> </div>
-        <div class="d-flex justify-content-between"> 
-            <div class = "d-flex justify-content-start"> 
-                <input id="searchbar" oninput="search_title()" type="text" name="searchbar" placeholder="Filter an album...">
-            </div>
-            <div class = "d-flex justify-content-end"> 
-                <input id="search" type="text" name="search" placeholder="Search an artist...">
-                <button id="button2" class="btn btn-danger" type="submit" onclick="search_artist()">Search</button>
+        <div class="container">
+            <div class="row"> 
+                <div class = "col-lg-6"> 
+                    <input id="search" type="text" name="search" placeholder="Search an artist...">
+                    <button id="button2" class="btn btn-danger" type="submit" onclick="search_artist()">Search</button>
+                </div>
+                <div class = "col-lg-6" id="barra"> 
+                    <input id="searchbar" oninput="search_title()" type="text" name="searchbar" placeholder="Filter an album...">
+                </div>
             </div>
         </div>
         <div> <hr> </div>
@@ -40,13 +42,14 @@
             
             <br>
             <hr>
-   
+            <div class="d-flex justify-content-around">
                 <button class="btn btn-default"  onclick='loadMore()'>Load more</button>
                 <a href="pagNuevoRockola.html">
-             <button class="btn btn-default" type="submit">Add an album to La Rockola!</button>
+                    <button class="btn btn-default" type="submit">Add an album to La Rockola!</button>
                 </a>
                 
                 <button  class="btn btn-default" onclick="toggleLayout()">Toggle layout</button>
+            </div>
             <script src="app.js"></script>
     </body>
     </html>
