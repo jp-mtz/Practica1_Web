@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fade In Animation</title>
+  <style>
+    /* Estilos para ocultar el contenido inicialmente */
+    #content {
+      opacity: 0;
+      transition: opacity 2s ease-in-out; /* Transición de opacidad durante 1 segundo */
+    }
+  </style>
+  <script>
+    window.addEventListener('load', function() {
+      const content = document.getElementById('content');
+      content.style.opacity = '1'; // Cambia la opacidad a 1 para iniciar la animación de fade-in
+    });
+  </script>
+</head>
+<body>
+  <div id="content">
+    <h1>Welcome to my website!</h1>
+    <!-- Otro contenido de tu página -->
+  </div>
+</body>
+</html>
