@@ -54,9 +54,14 @@ div{
     font-size: medium;
     overflow: auto;
 }
-b{
+#b{
     background-color:#0D0D0D;
     color: #A87FBE;
+    font-weight: bold;
+}
+b{
+    background-color: #0D0D0D;
+    font-weight: normal;
 }
 a{
     background-color:#0D0D0D;
