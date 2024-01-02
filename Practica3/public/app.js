@@ -16,6 +16,12 @@ async function loadMore(){
     postsDiv.innerHTML += newPosts;
 
     loadMoreRequests++;
+    
+    // Después de cargar los nuevos elementos, aplica la animación de fade-in
+    const newElements = document.querySelectorAll('#posts *');
+    newElements.forEach(element => {
+        element.style.opacity = '1';
+    });
 }
 
 let isGrid = false;
@@ -52,6 +58,41 @@ function search_title() {
         }
     }
 }
+
+window.addEventListener('load', function() {
+    const content = document.getElementById('bodycontent');
+    const elements = content.querySelectorAll('*');
+    
+    elements.forEach(element => {
+        element.style.opacity = '1';
+    });
+});
+
+// Ventana modal
+var modal = document.getElementById("ventanaModal");
+
+// Botón que abre el modal
+var boton = document.getElementById("abrirModal");
+
+// Hace referencia al elemento <span> que tiene la X que cierra la ventana
+var span = document.getElementsByClassName("cerrar")[0];
+
+// Cuando el usuario hace click en el botón, se abre la ventana
+boton.addEventListener("click",function() {
+  modal.style.display = "block";
+});
+
+// Si el usuario hace click en la x, la ventana se cierra
+span.addEventListener("click",function() {
+  modal.style.display = "none";
+});
+
+// Si el usuario hace click fuera de la ventana, se cierra.
+window.addEventListener("click",function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+});
 
 /*
 function search_artist() {
