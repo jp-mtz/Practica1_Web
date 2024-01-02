@@ -104,5 +104,29 @@ router.get('/post/:id/delete', (req, res) =>{
     res.render('deleted_post'); });
 
 
+// Obtener los datos de posts aquí antes de acceder a ellos
+const posts = enlaceServicio.getPosts();
+
+// Obtener los nombres de los artistas disponibles
+let existingArtists = Array.from(posts.values()).map(post => post.artist.toLowerCase());
+
+router.get('/availableArtist', (req, res) => {
+
+    let artist = req.query.artist.toLowerCase();
+
+    let availableArtist = existingArtists.indexOf(artist) === -1;
+
+    let response = {
+        available: availableArtist
+    }
+
+    res.json(response);
+});
+
+
+
+
+    
+
     
 export default router;

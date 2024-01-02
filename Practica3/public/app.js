@@ -43,12 +43,11 @@ function search_title() {
         let parentDiv = albums[i].parentElement.parentElement; // Obtener el elemento contenedor del álbum
 
         if (albumName.includes(input)) {
-            // Si el nombre del álbum coincide, muestra el contenedor a color
-            parentDiv.style.filter = "none"; // Remove black and white effect
-            parentDiv.style.filter = "blur(0px)";
+            // Si el álbum coincide y está disponible, muestra el contenedor 
+            parentDiv.style.display = "list-item";
         } else {
-            // Si el nombre del álbum no coincide, oculta todo el contenedor y aplica blanco y negro
-            parentDiv.style.filter = "grayscale(100%) blur(2px)"; // Apply black and white effect
+            // Si no coincide o no está disponible, oculta el contenedor
+            parentDiv.style.display = "none";   
         }
     }
 }
@@ -70,42 +69,56 @@ function search_artist() {
         }
     }
 }
-*/ 
+*/ /*
+async function checkArtistAvailability() {
 
-function search_artist() {
-    let input = document.getElementById('search').value.toLowerCase();
+    let artist = document.getElementById('artist');
+
+    let username = artist.value;
+
+    const response = await fetch(`/availableArtist?artist=${artist}`);
+
+    const responseObj = await response.json();
+
+    let message = responseObj.available? 
+        '<p>Disponible</p>':
+        '<p>No disponible</p>';
+
+    const messageDiv = document.getElementById('message');
+    messageDiv.innerHTML = message;
+
+}*/
+async function checkArtistAvailability() {
+    let artistInput = document.getElementById('artist');
+    let artist = artistInput.value.toLowerCase(); // Convertir a minúsculas para coincidencias no sensibles a mayúsculas
+
+    const response = await fetch(`/availableArtist?artist=${artist}`);
+    const responseObj = await response.json();
+
+    let available = responseObj.available;
+
     let albums = document.getElementsByClassName('artist');
+    let input = document.getElementById('artist').value.toLowerCase();
+
 
     for (let i = 0; i < albums.length; i++) {
-        let albumName = albums[i].innerText.toLowerCase();
         let parentDiv = albums[i].parentElement.parentElement; // Obtener el elemento contenedor del álbum
+        let albumArtist = albums[i].innerText.toLowerCase();
 
-        if (albumName.includes(input)) {
-            // Si el nombre del álbum coincide, realiza una solicitud AJAX para obtener más información
-            // (En este ejemplo, se asume que hay una función llamada getAlbumInfo que obtiene la información del álbum)
-            getAlbumInfo(albums[i].dataset.albumId, parentDiv);
-        } else {
-            parentDiv.style.display = "none";
+
+        if (!available && albumArtist.includes(input)) {
+            // Si el nombre del artista coincide y está disponible, muestra el contenedor a color
+            parentDiv.style.filter = "none"; // Remove black and white effect
+            parentDiv.style.filter = "blur(0px)";
+
+        } 
+        else if (available && input === ""){
+            parentDiv.style.filter = "none"; // Remove black and white effect
+            parentDiv.style.filter = "blur(0px)";
         }
-    }
-}
-
-function getAlbumInfo(albumId, parentDiv) {
-    // Realizar una solicitud AJAX aquí
-    let xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            // Procesar la respuesta del servidor y actualizar el contenido del contenedor
-            let albumInfo = JSON.parse(xhr.responseText);
-            // Supongamos que hay un elemento en parentDiv con la clase 'album-info' para mostrar la información del álbum
-            let albumInfoElement = parentDiv.querySelector('.album-info');
-            albumInfoElement.innerText = albumInfo.description;
-            parentDiv.style.display = "list-item";
+        else {
+            // Si el nombre del artista no coincide, oculta todo el contenedor y aplica blanco y negro
+            parentDiv.style.filter = "grayscale(100%) blur(2px)"; // Apply black and white effect
         }
     };
-
-    // Establecer la URL de la solicitud AJAX
-    xhr.open('GET', 'tu_servidor/tu_ruta?id=' + albumId, true);
-    // Enviar la solicitud
-    xhr.send();
 }
