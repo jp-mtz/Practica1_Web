@@ -93,42 +93,6 @@ window.addEventListener("click",function(event) {
   }
 });
 
-/*
-function search_artist() {
-    let input = document.getElementById('search').value.toLowerCase();
-    let albums = document.getElementsByClassName('artist');
-
-    for (let i = 0; i < albums.length; i++) {
-        let albumName = albums[i].innerText.toLowerCase();
-        let parentDiv = albums[i].parentElement.parentElement; // Obtener el elemento contenedor del álbum
-
-        if (albumName.includes(input)) {
-            // Si el nombre del álbum coincide, muestra el contenedor 
-            parentDiv.style.display= "list-item"; 
-        } else {
-            parentDiv.style.display= "none"; 
-        }
-    }
-}
-*/ /*
-async function checkArtistAvailability() {
-
-    let artist = document.getElementById('artist');
-
-    let username = artist.value;
-
-    const response = await fetch(`/availableArtist?artist=${artist}`);
-
-    const responseObj = await response.json();
-
-    let message = responseObj.available? 
-        '<p>Disponible</p>':
-        '<p>No disponible</p>';
-
-    const messageDiv = document.getElementById('message');
-    messageDiv.innerHTML = message;
-
-}*/
 async function checkArtistAvailability() {
     let artistInput = document.getElementById('artist');
     let artist = artistInput.value.toLowerCase(); // Convertir a minúsculas para coincidencias no sensibles a mayúsculas
@@ -162,4 +126,35 @@ async function checkArtistAvailability() {
             parentDiv.style.filter = "grayscale(100%) blur(2px)"; // Apply black and white effect
         }
     };
-}
+};
+  
+// Fetch all the forms we want to apply custom Bootstrap validation styles to
+var forms = document.querySelectorAll('.needs-validation');
+
+// Loop over them and prevent submission
+Array.prototype.slice.call(forms).forEach(function (form) {
+  form.addEventListener('submit', function (event) {
+    if (!form.checkValidity()) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
+    form.classList.add('was-validated');
+  }, false);
+},);
+
+  var coverInput = form.querySelector('#CoverInput');
+
+  coverInput.addEventListener('input', function () {
+    var coverValue = coverInput.value.trim();
+
+    var invalidCoverIn = form.querySelector('#CoverIn');
+    var invalidFeedback = form.querySelector('.invalid-feedback:not(#CoverIn)');
+
+    if (coverValue.length > 0) {
+      invalidCoverIn.style.display = 'none';
+    } else {
+      invalidCoverIn.style.display = 'block';
+    }
+},);
+
