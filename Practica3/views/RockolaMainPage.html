@@ -11,15 +11,9 @@
     </head>
     <body id="bodycontent">
         <div> <hr> </div>
-        <div class="container">
-            <div class="row"> 
-                <div class = "col-lg-6"> 
-                    <input id="artist" type="text" name="artist" placeholder="Search an artist..." oninput='checkArtistAvailability()'>
-                </div>
-                <div class = "col-lg-6" id="barra"> 
-                    <input id="searchbar" oninput="search_title()" type="text" name="searchbar" placeholder="Filter an album...">
-                </div>
-            </div>
+        <div class="d-flex justify-content-evenly">
+                <input id="artist" type="text" name="artist" placeholder="Search an artist..." oninput='checkArtistAvailability()'>
+                <input id="filterbar" oninput="search_title()" type="text" name="filterbar" placeholder="Filter an album...">
         </div>
         <div> <hr> </div>
         <div class="grid-container" id='posts'>
@@ -50,7 +44,7 @@
             <div id="ventanaModal" class="modal"> 
                 <div class="contenido-modal"> 
                     <span class="cerrar">&times;</span>
-                <h2 id="h2"> <span>Add a new Album!</span></h1>
+                    <h2> <span id="modals">Add a new Album!</span></h2>
                 <form action="post/new" method="post" class="needs-validation" novalidate>
                     <div class="container">
                     <br>
@@ -163,9 +157,9 @@
                             <br><br>
                             </form>
                             <div class= "d-flex justify-content-center gap-2">
-                            <button type="submit" class="btn btn-default" value='Save'>Save</button>
-        
-                            <a href= "/" class="btn btn-default">Cancel</a>
+                                <br>
+                            <button type="submit" id="button2" class="btn btn-danger" value='Save'>Save</button>
+                            <a href= "/"  id="button2" class="btn btn-danger">Cancel</a>
                         </div>
                     </div>
                     </div>

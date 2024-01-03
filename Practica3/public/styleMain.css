@@ -99,56 +99,30 @@ hr{
 
 }
 
-#searchbar{
-    margin-left:5%;
+#fondo{
+    background-color:#0D0D0D;
+}
+
+#filterbar{
+    margin-right:3%;
     padding: 5px;
     border-radius: 10px;
 }
 
-#search{
+#artist{
+    margin-left:3%;
     padding: 5px;
     border-radius: 10px;
-}
-
-#button2{
-    margin-right:5%;
-    background-color: #534359;
-    border-color: #534359; 
-}
-
-
-#button2:hover{ 
-    background-color: #F1C2F2;
-    border-color: #534359; 
-    color: #0D0D0D;
-}
-
-#button2:active{ 
-    background-color: #0D0D0D;
-    border-color: #534359; 
-    color: white;
 }
 
 input[type=text] {
-    width: 50%;
+    width: 30%;
     -webkit-transition: width 0.15s ease-in-out;
     transition: width 0.15s ease-in-out;
 }
 
  input[type=text]:focus {
-    width: 70%;
-}
-
-#barra{
-    position: relative;
-    justify-content: right;
-}
-
-.div.row.justify-content-between{
-    padding: 0;
-    width: 100%;
-    overflow: auto;
-    margin: 0;
+    width: 40%;
 }
 
 #bodycontent * {
@@ -160,15 +134,23 @@ input[type=text] {
     font-family: Arial;
 }
 
-#h2{
+h2{
+    background-color: #0D0D0D;
     color:#F1C2F2; 
     text-align: center;
     font-family: Arial;
-    background-color: #0D0D0D !important;
+}
+
+#modals{
+    background-color: #0D0D0D;
 }
 
 form{
     font-family: Arial, Helvetica, sans-serif;
+}
+
+.modal .contenido-modal{
+    background-color: #0D0D0D;
 }
 
 .modal{
@@ -205,23 +187,42 @@ form{
 @-webkit-keyframes animatetop {
     from {top:-300px; opacity:0} 
     to {top:0; opacity:1}
-  }
+}
   
   @keyframes animarsuperior {
     from {top:-300px; opacity:0}
     to {top:0; opacity:1}
 }
 
-.close{
-    color:#0D0D0D; 
+.cerrar{
+    color:#F1C2F2; 
     float: right; 
-    font-size: 30px;
+    font-size: 20px;
     font-weight: bold; 
+    background-color: #0D0D0D;
 }
 
-.close:hover,
-.close:focus {
-  color: #000;
+.cerrar:hover,
+.cerrar:focus {
+  color: #534359;
   text-decoration: none;
   cursor: pointer;
+}
+
+#button2{ 
+    background-color:#DDACF2;
+    border-color: #DDACF2; 
+    color: black;
+}
+
+#button2:hover{ 
+    background-color: #F1C2F2;
+    border-color: #534359; 
+    color: #0D0D0D;
+}
+
+#button2:active{ 
+    background-color: #0D0D0D;
+    border-color: #534359; 
+    color: white;
 }

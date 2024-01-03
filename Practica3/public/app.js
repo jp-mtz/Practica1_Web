@@ -33,7 +33,7 @@ function toggleLayout() {
     postsDiv.style.gridTemplateColumns = "30%";
     postsDiv.style.justifyContent = "center"; // Centrar horizontalmente el contenido
   } else {
-    postsDiv.style.gridTemplateColumns = "repeat(auto-fill, minmax(300px, 1fr))";
+    postsDiv.style.gridTemplateColumns = "repeat(auto-fill, minmax(350px, 1fr))";
     postsDiv.style.justifyContent = "initial"; // Restaurar la alineación horizontal por defecto
   }
 
@@ -41,7 +41,7 @@ function toggleLayout() {
 }
 
 function search_title() {
-    let input = document.getElementById('searchbar').value.toLowerCase();
+    let input = document.getElementById('filterbar').value.toLowerCase();
     let albums = document.getElementsByClassName('album');
 
     for (let i = 0; i < albums.length; i++) {
