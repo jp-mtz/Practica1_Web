@@ -163,20 +163,26 @@ var forms = document.querySelectorAll('.needs-validation');
 // Loop over them and prevent submission
 Array.prototype.slice.call(forms).forEach(function (form) {
     form.addEventListener('submit', function (event) {
-        if (!form.checkValidity()) {
-            event.preventDefault();
+      //verificar si el formulario es válido   
+      if (!form.checkValidity()) {
+            event.preventDefault(); //prevenir que se envíe el formulario si este no es válido 
             event.stopPropagation();
         }
 
-        form.classList.add('was-validated');
+        form.classList.add('was-validated'); //marcar el formulario como validado 
     }, false);
 
+    // obtener el elemento de entrada para la portada del formulario actual 
     var coverInput = form.querySelector('#CoverInput');
 
     coverInput.addEventListener('input', function () {
+        // obtener el valor del campo de la portada y eliminar espacios en blanco 
         var coverValue = coverInput.value.trim();
+
+        //Obtener elementos relacionados con la validación de la portada 
         var invalidCoverIn = form.querySelector('#CoverIn');
 
+        //mostrar u ocultar el mensaje de error según si hay o no link para la portada
         if (coverValue.length > 0) {
             invalidCoverIn.style.display = 'none';
         } else {
@@ -184,12 +190,17 @@ Array.prototype.slice.call(forms).forEach(function (form) {
         }
     });
 
+    //obtener el elemento de entrada para el artista del formulario actual 
     var artistInput = form.querySelector('#ArtistInput');
 
     artistInput.addEventListener('input', function () {
+      // obtener el valor del campo del artista y eliminar espacios en blanco 
         var artistValue = artistInput.value.trim();
+
+        //obtener elementos relacionados con la validación del artista 
         var invalidArtistIn = form.querySelector('#ArtistIn');
 
+        // Mostrar u ocultar el mensaje de error según si hay o no nombre de artista 
         if (artistValue.length > 0) {
             invalidArtistIn.style.display = 'none';
         } else {
@@ -197,12 +208,17 @@ Array.prototype.slice.call(forms).forEach(function (form) {
         }
     });
 
+    // obtener el elemento de entrada para la review del formulario actual 
     var reviewInput = form.querySelector('#ReviewInput');
 
     reviewInput.addEventListener('input', function () {
+      //Obtener el valor del campo de review y eliminar espacios en blanco
         var reviewValue = reviewInput.value.trim();
+
+        //obtener el elemento relacionado con la validacion de la review 
         var charCountInvalid = form.querySelector('#ReviewIn');
 
+        //mostrar u ocultar el mensaje de error según la longitud de la review 
         if (reviewValue.length >= 50 && reviewValue.length <= 500) {
             charCountInvalid.style.display = 'none';
         } else {
