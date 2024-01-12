@@ -151,13 +151,16 @@
     Array.prototype.slice.call(forms)
       .forEach(function (form) {
         form.addEventListener('submit', function (event) {
+        //Verificar si el formulario es válido 
           if (!form.checkValidity()) {
-            event.preventDefault()
+            event.preventDefault() //si eñ formulario no es válido no se envía
             event.stopPropagation()
           }
   
-          form.classList.add('was-validated')
+          form.classList.add('was-validated') //marcar el formulario como válido
         }, false)
+
+        //obtener el elemento de entrada para la portada del formulario actual 
         var coverInput = form.querySelector('#CoverInput');
 
             coverInput.addEventListener('input', function () {

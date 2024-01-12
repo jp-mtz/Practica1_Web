@@ -12,7 +12,7 @@
     <body id="bodycontent">
         <div> <hr> </div>
         <div class="d-flex justify-content-evenly">
-                <input id="artist" type="text" name="artist" placeholder="Search an artist..." oninput='checkArtistAvailability()'>
+                <input id="artist" type="text" name="artist" placeholder="Search an artist..." oninput='checkArtistAvailability()'> 
                 <input id="filterbar" oninput="search_title()" type="text" name="filterbar" placeholder="Filter an album...">
         </div>
         <div> <hr> </div>
@@ -34,7 +34,7 @@
 
             <hr>
             <div class="d-flex justify-content-around">
-                <button class="btn btn-default"  onclick='loadMore()'>Load more</button>
+                <button class="btn btn-default"  onclick='loadMore()'>Load more</button> 
                 <button id="abrirModal" class="btn btn-default" type="submit">Add an album to La Rockola!</button>
                 
                 <button  class="btn btn-default" onclick="toggleLayout()">Toggle layout</button>
@@ -45,7 +45,7 @@
                 <div class="contenido-modal"> 
                     <span class="cerrar">&times;</span>
                     <h2> <span id="modals">Add a new Album!</span></h2>
-                <form action="post/new" method="post" class="needs-validation" novalidate>
+                <form action="post/new" method="post" class="was-validated" novalidate>
                     <div class="container">
                     <br>
                     <div class="border p-3 rounded-3">
