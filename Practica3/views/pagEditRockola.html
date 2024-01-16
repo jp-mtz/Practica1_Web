@@ -16,72 +16,131 @@
     </head>
     
     <body>
-        <form action="/post/{{post.id}}/edit/edits" method="post">
+        <form action="/post/{{post.id}}/edit/edits" method="post" class="was-validated" novalidate>
             <br>
             <div class="container">
-            <br>
-            <div class="border p-3 rounded-3">
-                <div class="row">  
-                <div class="col-md-1"></div>
-                <div class="col-md-10">
-                    <form role="form">
-                        <div class="input-group">
-                            <div class="input-group mb-3 ">
-                                <span class="input-group-text">Artist</span>
-                                <input type="text" class="form-control" value="{{post.artist}}" aria-label="Artist name" name='artist'>
-                                <span class="input-group-text">Year</span>
-                                <input type="number" class="form-control" value="{{post.year}}" aria-label="Year" min="1700" max="2024" name='year'>
+                <br>
+                <div class="border p-3 rounded-3">
+                    <div class="row">  
+                    <div class="col-md-1"></div>
+                    <div class="col-md-10">
+                        <form role="form">
+                            <div class="input-group">
+                                <div class="input-group mb-3 ">
+                                    <span class="input-group-text">Artist</span>
+                                    <input type="text" class="form-control" placeholder="Name" value="{{post.artist}}" aria-label="Artist name" name='artist' id="ArtistInput"  pattern="^[A-Z][a-zA-Z\s]*$" required>
+                                    <div class="valid-feedback"></div>
+                                    <div class="valid-feedback">
+                                        Ok!
+                                    </div>
+                                    <div class="invalid-feedback" id="ArtistIn">
+                                        You need to write down the name of the artist.
+                                    </div>
+                                    <div class="invalid-feedback" >
+                                        You need to write down the name of the artist with the first letter capitalized.
+                                    </div>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">Year</span>
+                                    <input type="number" class="form-control" placeholder="YYYY" value="{{post.year}}" aria-label="Year" min="1700" max="2024" name='year' required>
+                                    <div class="valid-feedback">
+                                        Ok!
+                                </div>
+                                    <div class="invalid-feedback">
+                                        You need to write down the year.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="input-group mb-3">
-                            <span class="input-group-text" id="basic-addon1">Album</span>
-                            <input type="text" class="form-control" value="{{post.album}}" aria-label="Nombre" aria-describedby="basic-addon1" name='album'>
-                        </div>
-                        
-                        <div class="input-group mb-3">
-                            <span class="input-group-text" id="basic-addon1">Cover</span>
-                            <input type="text" class="form-control" value="{{post.cover}}" aria-label="url" aria-describedby="basic-addon1" name='cover'>
-                        </div>
-                        
-                        <div class="input-group mb-3">
-                            <span class="input-group-text">Genre</span>
-                            <input type="text" aria-label="First name" class="form-control" name='genre' value="{{post.genre}}">
-                        </div>
-                        <div class="input-group mb-3">
-                            <span class="input-group-text">Score</span>
-                            <select id="Score" class="form-control" name='score'> 
-                                <option selected="Add a Score"> </option>
-                                <option value="0"> 0 </option>
-                                <option value="1"> 1 </option>
-                                <option value="2"> 2 </option>
-                                <option value="3"> 3 </option>
-                                <option value="4"> 4 </option>
-                                <option value="5"> 5 </option>
-                                <option value="6"> 6 </option>
-                                <option value="7"> 7 </option>
-                                <option value="8"> 8 </option>
-                                <option value="9"> 9 </option>
-                                <option value="10"> 10 </option>
-                            </select>
-                        </div>
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                            <span class="input-group-text" >Review</span>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1">Album</span>
+                                <input type="text" class="form-control" placeholder="Name" value="{{post.album}}" aria-label="Nombre" aria-describedby="basic-addon1" name='album' required>
+                                <div class="valid-feedback">
+                                    Ok!
+                                </div>
+                                <div class="invalid-feedback">
+                                    You need to write down the album's name.
+                                </div>
                             </div>
-                            <textarea class="form-control" rows="1" name='review' >{{post.review}}</textarea>
-                        </div>
-                    </div>                   
-                    <br><br>
-                    </form>
-                    <div class= "d-flex justify-content-center gap-2">
-                    <button type="submit" class="btn btn-default" value='Save'>Save</button>
-
-                    <a href= "/" class="btn btn-default">Cancel</a>
+                            
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1">Cover</span>
+                                <input type="text" class="form-control" placeholder="Album's cover URL"  value="{{post.cover}}" id="CoverInput" aria-label="url" aria-describedby="basic-addon1" name='cover' pattern="https://.*" required>
+                                <div class="valid-feedback">
+                                    Ok!
+                                </div>
+                                <div class="invalid-feedback" id="CoverIn">
+                                    You need to sumbit the link of the album's cover.
+                                </div>
+                                <div class="invalid-feedback">
+                                    Cover's URL must start with  "https://".
+                                </div>
+                            </div>
+                            
+                            
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">Genre</span>
+                                <input type="text" aria-label="First name" value="{{post.genre}}" class="form-control" name='genre' required>
+                                <div class="valid-feedback">
+                                    Ok!
+                                </div>
+                                <div class="invalid-feedback">
+                                    You need to write down the genre.
+                                </div>
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">Score</span>
+                                <select id="Score" class="form-control" name='score' required> 
+                                    <option selected="{{post.score}}"> </option>
+                                    <option value="0"> 0 </option>
+                                    <option value="1"> 1 </option>
+                                    <option value="2"> 2 </option>
+                                    <option value="3"> 3 </option>
+                                    <option value="4"> 4 </option>
+                                    <option value="5"> 5 </option>
+                                    <option value="6"> 6 </option>
+                                    <option value="7"> 7 </option>
+                                    <option value="8"> 8 </option>
+                                    <option value="9"> 9 </option>
+                                    <option value="10"> 10 </option>
+                                </select>
+                                <div class="valid-feedback">
+                                    Ok!
+                                </div>
+                                <div class="invalid-feedback">
+                                    You need to select a score.
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                <span class="input-group-text" >Review</span>
+                                </div>
+                                <textarea class="form-control" rows="1" name='review' id="ReviewInput" minlength="50" maxlength="500" value="{{post.review}}" required></textarea>
+                                <div class="valid-feedback">
+                                    Ok!
+                                </div>
+                                <div class="invalid-feedback"  id="ReviewIn">
+                                    You need to write down a review.
+                                </div>
+                                <div class="invalid-feedback">
+                                    The text must be between 50 and 500 characters.
+                                </div>
+                            </div>
+                        </div>                   
+                        <br><br>
+                        </form>
+                        <div class= "d-flex justify-content-center gap-2">
+                            <br>
+                        <button type="submit" class="btn btn-default" value='Save'>Save</button>
+                        <a href= "/" class="btn btn-default">Cancel</a>
+                    </div>
                 </div>
-            </div>
-            </div>
-            </div>
-            </div>
-        </form>
-    </body>
+                </div>
+                </div>
+                </div>
+            </form>
+        </div>
+        </div>
+        <script src="app.js"> </script>  
+</body>
 </html>
+
